@@ -329,8 +329,7 @@ func (r *Reader) ProcessTimeFrames(concurrency int, timeFrame chan<- *TimeFrame)
 				err := r.parseTimeFrame(data, tf, true)
 				if err != nil && err != io.EOF {
 					fmt.Printf("Failed to process time frame: (%v) %v\n", string(data), err)
-					close(timeFrame)
-					return
+					continue
 				}
 
 				timeFrame <- tf
