@@ -9,7 +9,7 @@ import (
 	"strings"
 )
 
-func openReadableTacView(path string) (io.ReadCloser, error) {
+func OpenReadableTacView(path string) (io.ReadCloser, error) {
 	file, err := os.Open(path)
 	if err != nil {
 		return nil, err
@@ -45,7 +45,7 @@ func (z *zipWriteCloser) Close() error {
 	return z.file.Close()
 }
 
-func openWritableTacView(path string) (io.WriteCloser, error) {
+func OpenWritableTacView(path string) (io.WriteCloser, error) {
 	file, err := os.Create(path)
 
 	if err != nil {

@@ -48,7 +48,7 @@ func commandRecord(ctx *cli.Context) error {
 		return err
 	}
 
-	outputFile, err := openWritableTacView(ctx.Path("output"))
+	outputFile, err := OpenWritableTacView(ctx.Path("output"))
 	if err != nil {
 		return err
 	}

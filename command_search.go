@@ -62,7 +62,7 @@ func commandSearch(ctx *cli.Context) error {
 	for _, filePath := range ctx.StringSlice("file") {
 		fmt.Fprintf(os.Stderr, "Processing file %v...\n", filePath)
 
-		file, err := openReadableTacView(filePath)
+		file, err := OpenReadableTacView(filePath)
 		if err != nil {
 			return err
 		}

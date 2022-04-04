@@ -54,12 +54,12 @@ func commandNormalize(ctx *cli.Context) error {
 		excludeProperties[parts[0]] = parts[1]
 	}
 
-	inputFile, err := openReadableTacView(ctx.Path("input"))
+	inputFile, err := OpenReadableTacView(ctx.Path("input"))
 	if err != nil {
 		return err
 	}
 
-	outputFile, err := openWritableTacView(ctx.Path("output"))
+	outputFile, err := OpenWritableTacView(ctx.Path("output"))
 	if err != nil {
 		return err
 	}
