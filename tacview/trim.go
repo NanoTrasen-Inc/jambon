@@ -19,9 +19,6 @@ func TrimRaw(reader RawReader, writer RawWriter, start, end float64) error {
 			return err
 		}
 
-		if rawTimeFrame.Offset >= start {
-			break
-		}
 		parsed, err := rawTimeFrame.Parse()
 		if err != nil {
 			return err
@@ -40,6 +37,10 @@ func TrimRaw(reader RawReader, writer RawWriter, start, end float64) error {
 					}
 				}
 			}
+		}
+
+		if rawTimeFrame.Offset >= start {
+			break
 		}
 	}
 
